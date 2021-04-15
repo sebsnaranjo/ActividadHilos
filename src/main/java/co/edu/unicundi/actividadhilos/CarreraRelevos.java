@@ -11,4 +11,67 @@ package co.edu.unicundi.actividadhilos;
  */
 public class CarreraRelevos {
     
+        Carrera nuevaCarrera;
+        
+        CarreraRelevos(){
+            this.nuevaCarrera = new Carrera();
+        }
+        
+        public void iniciarCarrera() throws InterruptedException{
+            
+            Corredor corredorUnoTeamX = new Corredor(nuevaCarrera,1,0);
+            Corredor corredorDosTeamX = new Corredor(nuevaCarrera,1,30);
+            Corredor corredorTresTeamX = new Corredor(nuevaCarrera,1,60);
+
+            Corredor corredorUnoTeamY = new Corredor(nuevaCarrera,2,0);
+            Corredor corredorDosTeamY = new Corredor(nuevaCarrera,2,30);
+            Corredor corredorTresTeamY = new Corredor(nuevaCarrera,2,60);
+
+            Corredor corredorUnoTeamZ = new Corredor(nuevaCarrera,3,0);
+            Corredor corredorDosTeamZ = new Corredor(nuevaCarrera,3,30);
+            Corredor corredorTresTeamZ = new Corredor(nuevaCarrera,3,60);
+        
+            corredorUnoTeamX.start();
+            corredorDosTeamY.start();
+            corredorTresTeamZ.start();
+            
+            corredorUnoTeamX.join();
+            if(corredorUnoTeamX.isAlive()==false){
+                corredorDosTeamX.start();
+            }
+            corredorDosTeamX.join();
+            if(corredorDosTeamX.isAlive()==false){
+                corredorTresTeamX.start();
+            }
+            corredorUnoTeamY.join();
+            if(corredorUnoTeamY.isAlive()==false){
+                corredorDosTeamY.start();
+            }
+            corredorDosTeamY.join();
+            if(corredorDosTeamY.isAlive()==false){
+                corredorTresTeamY.start();
+            }
+            corredorUnoTeamZ.join();
+            if(corredorUnoTeamZ.isAlive()==false){
+                corredorDosTeamZ.start();
+            }
+            corredorDosTeamZ.join();
+            if(corredorDosTeamZ.isAlive()==false){
+                corredorTresTeamZ.start();
+            }
+            
+            corredorTresTeamX.join();
+            corredorTresTeamY.join();
+            corredorTresTeamZ.join();
+            
+            if(corredorTresTeamX.isAlive()==false && corredorTresTeamY.isAlive()==true && corredorTresTeamZ.isAlive()==true){
+                System.out.println(corredorTresTeamX.getId() + " ganó!.");
+            }else if(corredorTresTeamX.isAlive()==true && corredorTresTeamY.isAlive()==false && corredorTresTeamZ.isAlive()==true){
+                System.out.println(corredorTresTeamY.getId() + " ganó!.");
+            }else if(corredorTresTeamX.isAlive()==true && corredorTresTeamY.isAlive()==true && corredorTresTeamZ.isAlive()==false){
+                System.out.println(corredorTresTeamZ.getId() + " ganó!.");
+            }
+            
+        }
+    
 }

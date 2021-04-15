@@ -5,29 +5,36 @@
  */
 package co.edu.unicundi.actividadhilos;
 
+import java.util.Scanner;
+
 /**
  *
  * @author PC
  */
-public class Principal {
-    public static void main() {
-       
-        Object primerEquipo = new Object();
-        Object segundoEquipo = new Object();
-        Object tercerEquipo = new Object();
+public class Principal{
+    
+    Scanner escaner;
+    int matriz[][];
+    
+    public Principal(){
+        this.escaner=new Scanner(System.in);
+    }
+    
+    /*public void inicializarmatriz(){
         
-        CarreraRelevos corredorUnoTeamX = new Corredor("TeamX", primerEquipo, 33);
-        CarreraRelevos corredorDosTeamX = new Corredor("TeamX", primerEquipo, 33);
-        CarreraRelevos corredorTresTeamX = new Corredor("TeamX", primerEquipo, 34);
-            
-        CarreraRelevos corredorUnoTeamY = new Corredor("TeamY",segundoEquipo, 33);
-        CarreraRelevos corredorDosTeamY = new Corredor("TeamY", segundoEquipo, 33);
-        CarreraRelevos corredorTresTeamY = new Corredor("TeamY", segundoEquipo, 34);
-                  
-        CarreraRelevos corredorUnoTeamZ = new Corredor("TeamZ", tercerEquipo, 33);
-        CarreraRelevos corredorDosTeamZ = new Corredor("TeamZ", tercerEquipo, 33);
-        CarreraRelevos corredorTresTeamZ = new Corredor("TeamZ", tercerEquipo, 34);
+    }*/
+    
+    public void comienzo(){
+        System.out.println("Welcome");
+        System.out.println("");
+        System.out.println("Carrera de relevos");
+        System.out.println("");
         
-                
+        //inicializarMatriz();
+    }
+    
+    public static void main(String[] args) throws InterruptedException {
+        CarreraRelevos carrera = new CarreraRelevos();
+        carrera.inicio();
     }
 }
