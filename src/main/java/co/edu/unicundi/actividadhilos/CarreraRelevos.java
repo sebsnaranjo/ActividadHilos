@@ -7,10 +7,8 @@ package co.edu.unicundi.actividadhilos;
 
 /**
  *
- * @author PC
+ * @author ASUS
  */
-public class Pista {
-    public static void main() {
-        System.out.println("Inicio");
-    }
+public class CarreraRelevos {
+    
 }
