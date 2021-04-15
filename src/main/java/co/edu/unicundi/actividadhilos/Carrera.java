@@ -34,12 +34,13 @@ public class Carrera {
                 columnas++;
             }
         }
-    
-        public synchronized int avance(int linea, int avanceCompetidor, int columnaActual){
+    }
+    public synchronized int avance(int linea, int avanceCompetidor, int columnaActual){
+            
             lock.lock();
 
             try{
-                if(linea>=0 && linea<carrera.lenght){
+                if(linea>=0 && linea<carrera.length){
                     for(int i = 1; i<=avanceCompetidor; i++){
                         carrera[linea][columnaActual+i]=1;
                     }
@@ -50,5 +51,5 @@ public class Carrera {
             return columnaActual+=avanceCompetidor;
         }
     }
-}
+
 

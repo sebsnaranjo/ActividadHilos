@@ -20,21 +20,20 @@ public class Principal{
         this.escaner=new Scanner(System.in);
     }
     
-    /*public void inicializarmatriz(){
+    public void inicializarmatriz(){
         
-    }*/
+    }
     
     public void comienzo(){
         System.out.println("Welcome");
         System.out.println("");
         System.out.println("Carrera de relevos");
         System.out.println("");
-        
-        //inicializarMatriz();
+        inicializarmatriz();
     }
     
     public static void main(String[] args) throws InterruptedException {
         CarreraRelevos carrera = new CarreraRelevos();
-        carrera.inicio();
+        carrera.iniciarCarrera();
     }
 }

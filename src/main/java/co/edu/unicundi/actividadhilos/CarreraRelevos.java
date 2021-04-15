@@ -19,17 +19,17 @@ public class CarreraRelevos {
         
         public void iniciarCarrera() throws InterruptedException{
             
-            Corredor corredorUnoTeamX = new Corredor(nuevaCarrera,1,0);
-            Corredor corredorDosTeamX = new Corredor(nuevaCarrera,1,30);
-            Corredor corredorTresTeamX = new Corredor(nuevaCarrera,1,60);
+            Corredor corredorUnoTeamX = new Corredor(nuevaCarrera,1,0,1);
+            Corredor corredorDosTeamX = new Corredor(nuevaCarrera,1,30,0);
+            Corredor corredorTresTeamX = new Corredor(nuevaCarrera,1,60,0);
 
-            Corredor corredorUnoTeamY = new Corredor(nuevaCarrera,2,0);
-            Corredor corredorDosTeamY = new Corredor(nuevaCarrera,2,30);
-            Corredor corredorTresTeamY = new Corredor(nuevaCarrera,2,60);
+            Corredor corredorUnoTeamY = new Corredor(nuevaCarrera,2,0,1);
+            Corredor corredorDosTeamY = new Corredor(nuevaCarrera,2,30,0);
+            Corredor corredorTresTeamY = new Corredor(nuevaCarrera,2,60,0);
 
-            Corredor corredorUnoTeamZ = new Corredor(nuevaCarrera,3,0);
-            Corredor corredorDosTeamZ = new Corredor(nuevaCarrera,3,30);
-            Corredor corredorTresTeamZ = new Corredor(nuevaCarrera,3,60);
+            Corredor corredorUnoTeamZ = new Corredor(nuevaCarrera,3,0,1);
+            Corredor corredorDosTeamZ = new Corredor(nuevaCarrera,3,30,0);
+            Corredor corredorTresTeamZ = new Corredor(nuevaCarrera,3,60,0);
         
             corredorUnoTeamX.start();
             corredorDosTeamY.start();
