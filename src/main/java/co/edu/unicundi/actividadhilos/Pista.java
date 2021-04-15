@@ -9,7 +9,7 @@ package co.edu.unicundi.actividadhilos;
  *
  * @author PC
  */
-public class Principal {
+public class Pista {
     public static void main() {
         System.out.println("Inicio");
     }
