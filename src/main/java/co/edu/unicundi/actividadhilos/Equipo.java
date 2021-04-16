@@ -28,15 +28,32 @@ public class Equipo {
         this.id = id;
         this.datosEquipo = datosEquipo;
         imprimirCarrera();
+        colorCorrespondiente();
     }
     /**
     * Metodo para imprimir 
     */
     private void imprimirCarrera(){
         for (int i=0;i< datosEquipo.getDistancia();i++){
-           carril.add(i,"");    
+           carril.add(i, "_");    
         }
-        carril.add(carril.size(),"META");
+        carril.add(carril.size(),"M");
+    }
+    
+    private void colorCorrespondiente(){
+        switch (this.id){
+            case 1:
+                this.color = "\u001B[31m";
+                break;
+            case 2:
+                this.color = "\u001B[36m";
+                break;
+            case 3:
+                this.color = "\u001B[32m";
+                break;
+            default:
+                break;
+        }
     }
     /**
      * Metodos get y set
@@ -49,6 +66,15 @@ public class Equipo {
         this.nombre = nombre;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+    
+    
     public int getId() {
         return id;
     }

@@ -5,35 +5,13 @@
  */
 package co.edu.unicundi.actividadhilos;
 
-import java.util.Scanner;
-
 /**
  *
  * @author PC
  */
 public class Principal{
-    
-    Scanner escaner;
-    int matriz[][];
-    
-    public Principal(){
-        this.escaner=new Scanner(System.in);
-    }
-    
-    public void inicializarmatriz(){
-        
-    }
-    
-    public void comienzo(){
-        System.out.println("Welcome");
-        System.out.println("");
-        System.out.println("Carrera de relevos");
-        System.out.println("");
-        inicializarmatriz();
-    }
-    
-    public static void main(String[] args) throws InterruptedException {
-        CarreraRelevos carrera = new CarreraRelevos();
-        carrera.iniciarCarrera();
+    public static void main ( String [] args ) {
+        Carrera carrera =  new  Carrera();
+        carrera.inicio();
     }
 }

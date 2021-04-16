@@ -12,31 +12,39 @@ package co.edu.unicundi.actividadhilos;
  */
 public class Carrera {
   
-   
     public void inicio(){
-        DatosCarrera datosEquipo = new DatosCarrera(40,0,20,30);
+        DatosCarrera datosEquipo = new DatosCarrera(101,0,33,60);
         
         Equipo equipoUno = new Equipo("Uno",1,datosEquipo);
         Equipo equipoDos = new Equipo("Dos",2,datosEquipo);
         Equipo equipoTres = new Equipo("Tres",3,datosEquipo);
         
-        Atleta atleta1 = new Atleta(1, "A",equipoUno);
-        Atleta atleta2 = new Atleta(2, "B",equipoUno);
-        Atleta atleta3 = new Atleta(3, "C",equipoUno);
+        Atleta atleta1 = new Atleta(1, "//",equipoUno);
+        Atleta atleta2 = new Atleta(1, "//",equipoDos);
+        Atleta atleta3 = new Atleta(1, "//",equipoTres);
         
-        Atleta atleta4 = new Atleta(1, "A",equipoDos);
-        Atleta atleta5 = new Atleta(2, "B",equipoDos);
-        Atleta atleta6 = new Atleta(3, "C",equipoDos);
+        Atleta atleta4 = new Atleta(2, "()",equipoUno);
+        Atleta atleta5 = new Atleta(2, "()",equipoDos);
+        Atleta atleta6 = new Atleta(2, "()",equipoTres);
         
-        Atleta atleta7 = new Atleta(1, "A",equipoTres);
-        Atleta atleta8 = new Atleta(2, "B",equipoTres);
-        Atleta atleta9 = new Atleta(3, "C",equipoTres);
+        Atleta atleta7 = new Atleta(3, "[]",equipoUno);
+        Atleta atleta8 = new Atleta(3, "[]",equipoDos);
+        Atleta atleta9 = new Atleta(3, "[]",equipoTres);
         
+        CarreraRelevos competencia = new CarreraRelevos(equipoUno, equipoDos, equipoTres);
         
+        atleta1.start();
+        atleta2.start();
+        atleta3.start();
+        atleta4.start();
+        atleta5.start();
+        atleta6.start();
+        atleta7.start();
+        atleta8.start();
+        atleta9.start();
         
-    
-    
+        competencia.start();
     }
-    }
+}
 
 
