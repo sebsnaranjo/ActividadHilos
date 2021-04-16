@@ -22,17 +22,17 @@ public class Carrera {
         Equipo equipoTres = new Equipo("EQUIPO TRES",3,datosEquipo);
         
         //Equipo 1
-        Atleta atleta1 = new Atleta(1, "E1",equipoUno);
-        Atleta atleta2 = new Atleta(1, "E1",equipoDos);
-        Atleta atleta3 = new Atleta(1, "E1",equipoTres);
+        Atleta atleta1 = new Atleta(1, "E1.1",equipoUno);
+        Atleta atleta2 = new Atleta(1, "E2.1",equipoDos);
+        Atleta atleta3 = new Atleta(1, "E3.1",equipoTres);
         //Equipo 2
-        Atleta atleta4 = new Atleta(2, "E2",equipoUno);
-        Atleta atleta5 = new Atleta(2, "E2",equipoDos);
-        Atleta atleta6 = new Atleta(2, "E2",equipoTres);
+        Atleta atleta4 = new Atleta(2, "E1.2",equipoUno);
+        Atleta atleta5 = new Atleta(2, "E2.2",equipoDos);
+        Atleta atleta6 = new Atleta(2, "E3.2",equipoTres);
         //Equipo 3
-        Atleta atleta7 = new Atleta(3, "E3",equipoUno);
-        Atleta atleta8 = new Atleta(3, "E3",equipoDos);
-        Atleta atleta9 = new Atleta(3, "E3",equipoTres);
+        Atleta atleta7 = new Atleta(3, "E1.3",equipoUno);
+        Atleta atleta8 = new Atleta(3, "E2.3",equipoDos);
+        Atleta atleta9 = new Atleta(3, "E3.3",equipoTres);
         
         CarreraRelevos competencia = new CarreraRelevos(equipoUno, equipoDos, equipoTres);
         
