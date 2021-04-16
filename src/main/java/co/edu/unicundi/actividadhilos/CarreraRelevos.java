@@ -10,13 +10,15 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author ASUS
+ * @author Ana Sofia Lopera
+ * @author Frank Sebastian Naranjo
+ * @version 1.0.0
  */
 public class CarreraRelevos extends Thread{
     
     /**
-     * Se declaran las varianles de Equipo
-     * Y se  crear el constructor para acceder a sus datos
+     * Se declaran las varianbles de Equipo
+     * Y se  crear el constructor para acceder a los datos
      */
     
     private Equipo e1;
@@ -29,7 +31,7 @@ public class CarreraRelevos extends Thread{
         this.e3 = e3;
     }
     /**
-     * Metodo que permitira el funcionamiento de los hilos
+     * Metodo que permite el funcionamiento de los hilos
      */  
     public void run(){
         boolean identificador = false;

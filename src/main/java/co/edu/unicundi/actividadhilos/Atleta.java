@@ -11,9 +11,14 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author PC
+ * @author Ana Sofia Lopera Riveros
+ * @author Frank Sebastian Naranjo
+ * @version 1.0.0
  */
 public class Atleta extends Thread {
+    /**
+     * Se declaran variables de identificacion de posiciones, de asignacion de nombre y equipos
+     */
     private int id; 
     private String nombre;
     private Equipo equipo;
@@ -24,12 +29,16 @@ public class Atleta extends Thread {
         this.equipo = equipo;
         identificarAtleta();
     }
-    
+    /**
+     * Metodo que permite que los hilos pasen de corredor a corredor
+     */
     @Override
     public void run(){
         pasoATestigo();
     }
-    
+    /**
+     * Metodo el cual identifica el atleta y donde ubicado segun su hilo
+     */
     private void identificarAtleta(){
         ArrayList<String> ubicacionAtleta = new ArrayList<>();
         ubicacionAtleta = equipo.getCarril();
@@ -44,7 +53,9 @@ public class Atleta extends Thread {
             equipo.setCarril(ubicacionAtleta);
         }
     }
-    
+    /**
+     * Metodo que permite iniciar a los otros atletas
+     */
     private void pasoATestigo(){
         if(id==1){
             correr(equipo.getDatosEquipo().getP2());
@@ -74,7 +85,9 @@ public class Atleta extends Thread {
             correr(equipo.getDatosEquipo().getDistancia());
         }
     }
-    
+    /**
+     * Metodo que permite visualizar los hilos con su respectivo moviemiento
+     */
     private void correr(int posicion) {
         ArrayList<String> ubicacion = new ArrayList<>();
         int randomico;

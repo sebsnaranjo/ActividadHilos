@@ -9,7 +9,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ASUS
+ * @author Ana Sofia Lopera
+ * @author Frank Sebastian Naranjo
+ * @version 1.0.0
  */
 public class Equipo {
    /**
@@ -28,7 +30,7 @@ public class Equipo {
         this.id = id;
         this.datosEquipo = datosEquipo;
         imprimirCarrera();
-        colorCorrespondiente();
+        color();
     }
     /**
     * Metodo para imprimir 
@@ -39,8 +41,10 @@ public class Equipo {
         }
         carril.add(carril.size(),"META");
     }
-    
-    private void colorCorrespondiente(){
+    /**
+     * Metodo el cual dependiendo del equipo correspondiente asigna un color
+     */
+    private void color(){
         switch (this.id){
             case 1:
                 this.color = "\u001B[31m";

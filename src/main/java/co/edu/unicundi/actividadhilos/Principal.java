@@ -7,9 +7,14 @@ package co.edu.unicundi.actividadhilos;
 
 /**
  *
- * @author PC
+ * @author Ana Sofia Lopera
+ * @author Frank Sebastian Naranjo
+ * @version 1.0.0
  */
 public class Principal{
+    /**
+     * Metodo que inicializa el programa
+     */
     public static void main ( String [] args ) {
         Carrera carrera =  new  Carrera();
         carrera.inicio();

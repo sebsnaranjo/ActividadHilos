@@ -7,17 +7,21 @@ package co.edu.unicundi.actividadhilos;
 
 /**
  *
- * @author ASUS
+ * @author Ana Sofia Lopera
+ * @author Frank Sebastian Naranjo
+ * @version 1.0.0
  */
 public class DatosCarrera {
-
-   
-    
+    /**
+     * Variables para guardar la distancia y posiciones
+     */
     private int distancia;
     private int p1;
     private int p2;
     private int p3;
-
+    /**
+    * Metodos set y get
+    */
     public DatosCarrera(int distancia, int p1, int p2, int p3) {
         this.distancia = distancia;
         this.p1 = p1;
