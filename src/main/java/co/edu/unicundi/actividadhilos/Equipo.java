@@ -35,9 +35,9 @@ public class Equipo {
     */
     private void imprimirCarrera(){
         for (int i=0;i< datosEquipo.getDistancia();i++){
-           carril.add(i, "_");    
+           carril.add(i, " ");    
         }
-        carril.add(carril.size(),"M");
+        carril.add(carril.size(),"META");
     }
     
     private void colorCorrespondiente(){

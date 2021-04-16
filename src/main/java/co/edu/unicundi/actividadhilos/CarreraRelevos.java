@@ -33,12 +33,6 @@ public class CarreraRelevos extends Thread{
      */  
     public void run(){
         boolean identificador = false;
-        System.out.println("                             EQUIPOS");
-        System.out.println("______________________________________________________________________________");
-        System.out.println(e1.getColor() + e1.getNombre()
-                + "\u001B[0m" + "      " + e2.getColor() + e2.getNombre() + "\u001B[0m"
-                + "      " + e3.getColor() + e3.getNombre() + "\u001B[0m");
-        System.out.println(" ");
         do {
             mostrarCarrera(e1);
             mostrarCarrera(e2);
@@ -57,7 +51,7 @@ public class CarreraRelevos extends Thread{
      */      
     private void mostrarCarrera(Equipo equipo){
         for (Object objects : equipo.getCarril()){
-            System.out.println(equipo.getColor() + objects + "\u001B[0m");
+            System.out.print(equipo.getColor() + objects + "\u001B[0m");
         }
         System.out.println();
     } 
@@ -69,13 +63,13 @@ public class CarreraRelevos extends Thread{
         String meta1 = e1.getCarril().get(e1.getDatosEquipo().getDistancia());
         String meta2 = e2.getCarril().get(e2.getDatosEquipo().getDistancia());
         String meta3 = e3.getCarril().get(e3.getDatosEquipo().getDistancia());
-            if (meta1 != "M"){
+            if (meta1 != "META"){
                System.out.println("¡EL GANADOR ES: " + e3.getColor() + e1.getNombre() + "!");
                meta = true;
-            } else  if (meta2 != "M"){
-               System.out.println("¡EL GANADOR ES: " + e3.getColor() + e2.getNombre() + "!");
+            } else  if (meta2 != "META"){
+               System.out.println("¡EL GANADOR ES: " + e2.getColor() + e2.getNombre() + "!");
                meta = true;
-            }else if (meta3 != "M"){
+            }else if (meta3 != "META"){
                System.out.println("¡EL GANADOR ES: " + e3.getColor() + e3.getNombre() + "!");
                meta = true;
             }

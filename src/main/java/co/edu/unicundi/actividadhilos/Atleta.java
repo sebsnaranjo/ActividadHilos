@@ -112,7 +112,7 @@ public class Atleta extends Thread {
                adelante=adelante;
            }
            
-           ubicacion.set(posicionReal, "_");
+           ubicacion.set(posicionReal, " ");
            ubicacion.set(adelante, nombre);
            equipo.setCarril(ubicacion);
            
