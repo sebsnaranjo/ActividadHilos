@@ -5,73 +5,69 @@
  */
 package co.edu.unicundi.actividadhilos;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author ASUS
  */
 public class CarreraRelevos {
     
-        Carrera nuevaCarrera;
-        
-        CarreraRelevos(){
-            this.nuevaCarrera = new Carrera();
-        }
-        
-        public void iniciarCarrera() throws InterruptedException{
-            
-            Corredor corredorUnoTeamX = new Corredor(nuevaCarrera,1,0,1);
-            Corredor corredorDosTeamX = new Corredor(nuevaCarrera,1,30,0);
-            Corredor corredorTresTeamX = new Corredor(nuevaCarrera,1,60,0);
+      private Equipo e1;
+      private Equipo e2;
+      private Equipo e3;
 
-            Corredor corredorUnoTeamY = new Corredor(nuevaCarrera,2,0,1);
-            Corredor corredorDosTeamY = new Corredor(nuevaCarrera,2,30,0);
-            Corredor corredorTresTeamY = new Corredor(nuevaCarrera,2,60,0);
-
-            Corredor corredorUnoTeamZ = new Corredor(nuevaCarrera,3,0,1);
-            Corredor corredorDosTeamZ = new Corredor(nuevaCarrera,3,30,0);
-            Corredor corredorTresTeamZ = new Corredor(nuevaCarrera,3,60,0);
+    public CarreraRelevos(Equipo e1, Equipo e2, Equipo e3) {
+        this.e1 = e1;
+        this.e2 = e2;
+        this.e3 = e3;
+    }
+      
+    public void run(){
+        boolean identificador = false;
+        System.out.println(" ");
         
-            corredorUnoTeamX.start();
-            corredorDosTeamY.start();
-            corredorTresTeamZ.start();
-            
-            corredorUnoTeamX.join();
-            if(corredorUnoTeamX.isAlive()==false){
-                corredorDosTeamX.start();
+        do {
+            mostrarCarrera(e1);
+            mostrarCarrera(e2);
+            mostrarCarrera(e3);
+            System.out.println("\n");
+            System.out.println("\n");
+            identificador = meta();
+              try {
+                Thread.sleep(200);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(CarreraRelevos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            corredorDosTeamX.join();
-            if(corredorDosTeamX.isAlive()==false){
-                corredorTresTeamX.start();
+        } while (identificador == false); 
+  
+    }
+        
+       private void mostrarCarrera(Equipo equipo){
+           for (Object objects : equipo.getCarril()){
+               System.out.println(objects);
+           }
+           System.out.println();
+       } 
+       private boolean meta(){
+           boolean meta = false;
+           
+           String meta1 = e1.getCarril().get(e1.getDatosEquipo().getDistancia());
+           String meta2 = e2.getCarril().get(e2.getDatosEquipo().getDistancia());
+           String meta3 = e3.getCarril().get(e3.getDatosEquipo().getDistancia());
+           
+            if (meta1 != "META"){
+               System.out.println("¡EL GANADOR ES: " + e1.getNombre() + "!");
+               meta = true;
+              } else  if (meta2 != "META"){
+               System.out.println("¡EL GANADOR ES: " + e2.getNombre() + "!");
+               meta = true;
+              }else if (meta3 != "META"){
+               System.out.println("¡EL GANADOR ES: " + e3.getNombre() + "!");
+               meta = true;
             }
-            corredorUnoTeamY.join();
-            if(corredorUnoTeamY.isAlive()==false){
-                corredorDosTeamY.start();
-            }
-            corredorDosTeamY.join();
-            if(corredorDosTeamY.isAlive()==false){
-                corredorTresTeamY.start();
-            }
-            corredorUnoTeamZ.join();
-            if(corredorUnoTeamZ.isAlive()==false){
-                corredorDosTeamZ.start();
-            }
-            corredorDosTeamZ.join();
-            if(corredorDosTeamZ.isAlive()==false){
-                corredorTresTeamZ.start();
-            }
-            
-            corredorTresTeamX.join();
-            corredorTresTeamY.join();
-            corredorTresTeamZ.join();
-            
-            if(corredorTresTeamX.isAlive()==false && corredorTresTeamY.isAlive()==true && corredorTresTeamZ.isAlive()==true){
-                System.out.println(corredorTresTeamX.getId() + " ganó!.");
-            }else if(corredorTresTeamX.isAlive()==true && corredorTresTeamY.isAlive()==false && corredorTresTeamZ.isAlive()==true){
-                System.out.println(corredorTresTeamY.getId() + " ganó!.");
-            }else if(corredorTresTeamX.isAlive()==true && corredorTresTeamY.isAlive()==true && corredorTresTeamZ.isAlive()==false){
-                System.out.println(corredorTresTeamZ.getId() + " ganó!.");
-            }
-            
-        }
-    
+            return meta;
+       }
+          
 }
